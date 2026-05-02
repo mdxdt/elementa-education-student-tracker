@@ -314,14 +314,13 @@ const API = {
 // INIT
 // ═══════════════════════════════════════════════════════
 async function init() {
-  // Check if setup needed
   const check = await API.get('/api/auth/check').catch(() => null);
-  if (!check) {
+  if (check?.ok && TOKEN) { showApp(); return; }
+  if (check?.setup_needed) {
     document.getElementById('setup-notice').style.display = 'block';
     document.getElementById('auth-btn-text').textContent = 'Create Account';
     document.getElementById('auth-form').dataset.mode = 'setup';
   }
-  if (TOKEN && check?.ok) { showApp(); return; }
   document.getElementById('auth-screen').style.display = 'flex';
 }
 

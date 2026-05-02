@@ -178,8 +178,10 @@ async function handleLogin(request, env) {
 }
 
 async function handleAuthCheck(request, env) {
+  const existing = await env.DB.prepare('SELECT id FROM users LIMIT 1').first();
+  if (!existing) return json({ ok: false, setup_needed: true });
   const result = await requireAuth(request, env);
-  return json({ ok: result.ok });
+  return json({ ok: result.ok, setup_needed: false });
 }
 
 async function generateToken(userId, env) {
