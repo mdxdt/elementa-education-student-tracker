@@ -1,0 +1,16 @@
+name = "elementa-education"
+main = "src/worker.js"
+compatibility_date = "2024-01-01"
+
+# D1 Database binding
+[[d1_databases]]
+binding = "DB"
+database_name = "elementa-db"
+database_id = "YOUR_D1_DATABASE_ID"  # Replace after: wrangler d1 create elementa-db
+
+# Optional: Set JWT secret as an environment variable
+# wrangler secret put JWT_SECRET
+# (if not set, defaults to 'elementa-secret-change-me' — CHANGE THIS IN PRODUCTION)
+
+[vars]
+# JWT_SECRET = "set-this-via-wrangler-secret-put"
