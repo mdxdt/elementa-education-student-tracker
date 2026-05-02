@@ -6,7 +6,7 @@ compatibility_date = "2024-01-01"
 [[d1_databases]]
 binding = "DB"
 database_name = "elementa-db"
-database_id = "YOUR_D1_DATABASE_ID"  # Replace after: wrangler d1 create elementa-db
+database_id = "20a95bdc-717e-49c3-aaf0-c0007b564fe9"
 
 # Optional: Set JWT secret as an environment variable
 # wrangler secret put JWT_SECRET
