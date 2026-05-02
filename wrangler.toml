@@ -1,4 +1,4 @@
-name = "elementa-education"
+name = "elementa-education-student-tracker"
 main = "src/worker.js"
 compatibility_date = "2024-01-01"
 
